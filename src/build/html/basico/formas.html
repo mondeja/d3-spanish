@@ -1,0 +1,487 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Formas — d3-shape &mdash; documentación de d3-spanish - 0.0.1</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Índice"
+              href="../genindex.html"/>
+        <link rel="search" title="Búsqueda" href="../search.html"/>
+    <link rel="top" title="documentación de d3-spanish - 0.0.1" href="../index.html"/>
+        <link rel="next" title="Mapas — d3-geo" href="mapas.html"/>
+        <link rel="prev" title="Números aleatorios — d3-random" href="numeros_aleatorios.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> d3-spanish
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Conceptos básicos</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="escalas.html">Escalas — d3-scale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejes.html">Ejes — d3-axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timer.html">Timer — d3-timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numeros_aleatorios.html">Números aleatorios — d3-random</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Formas — d3-shape</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#arcos">Arcos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#d3-arc">d3.arc()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#areas">Areas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#links">Links</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#d3-linkvertical">d3.linkVertical()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#d3-linkhorizontal">d3.linkHorizontal()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mapas.html">Mapas — d3-geo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layouts.html">Layouts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Ejemplos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ejemplos/escalas_de_colores.html">Escalas de colores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejemplos/graficos/index.html">Gráficos</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Avanzado</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../avanzado/svg/index.html">SVG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../avanzado/canvas/index.html">Canvas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../avanzado/css/index.html">CSS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utilidades</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../utilidades/data_random_gen.html">Generador de datos aleatorio</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">d3-spanish</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Formas — d3-shape</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/basico/formas.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="formas-d3-shape">
+<span id="d3-shape-section"></span><h1>Formas — <a class="reference external" href="https://github.com/d3/d3-shape">d3-shape</a><a class="headerlink" href="#formas-d3-shape" title="Enlazar permanentemente con este título">¶</a></h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script><div class="section" id="arcos">
+<h2><a class="reference external" href="https://github.com/d3/d3-shape/blob/master/README.md#arcs">Arcos</a><a class="headerlink" href="#arcos" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="d3-arc">
+<h3><a class="reference external" href="https://github.com/d3/d3-shape#arc">d3.arc()</a><a class="headerlink" href="#d3-arc" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El generador de arcos produce una sección circular o en anillo, como en un gráfico <em>pie</em> o <em>donut</em>. Si la diferencia entre el ángulo de comienzo y el de final es mayor a 360 grados, el generador de arco producirá un círculo o anillo completo, si no, los arcos pueden tener las esquinas redondeadas y espaciado entre seccionares (padding angular).</p>
+<p>Los arcos siempre están centrados en la posición <cite>(0,0)</cite>, por lo que hay que usar el attributo <code class="docutils literal notranslate"><span class="pre">transform</span> <span class="pre">translate(x,y)</span></code> para moverlos a una posición diferente.</p>
+<p>Los diferentes generadores producen formas que pueden ser pasadas al atributo <code class="docutils literal notranslate"><span class="pre">d</span></code> de un elemento <code class="docutils literal notranslate"><span class="pre">path</span></code> en <code class="docutils literal notranslate"><span class="pre">svg</span></code>. Por ejemplo:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;arc-1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="kd">var</span> <span class="nx">arco_d</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">arc</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">innerRadius</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">outerRadius</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">startAngle</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">endAngle</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">);</span>
+
+  <span class="nx">arco_d</span><span class="p">();</span>  <span class="c1">// M6.123233995736766e-15,-100A100,100,0,1,1,6.123233995736766e-15,100L0,0Z</span>
+
+  <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#arc-1&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;transform&quot;</span><span class="p">,</span> <span class="s2">&quot;translate(125,125)&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="nx">arco_d</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div id="arc-1"></div>
+<script>
+  var arco_d = d3.arc()
+      .innerRadius(0)
+      .outerRadius(100)
+      .startAngle(0)
+      .endAngle(Math.PI);
+
+  arco_d();  // M6.123233995736766e-15,-100A100,100,0,1,1,6.123233995736766e-15,100L0,0Z
+
+  d3.select("#arc-1")
+      .append("svg")
+        .attr('width', 250)
+        .attr('height', 250)
+      .append("g")
+        .attr("transform", "translate(125,125)")
+      .append("path")
+        .attr("d", arco_d)
+        .attr("fill", "red");
+</script></div>
+</div>
+<div class="section" id="areas">
+<h2><a class="reference external" href="https://github.com/d3/d3-shape/blob/master/README.md#areas">Areas</a><a class="headerlink" href="#areas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para generar un area en un chart hemos de escribir algo como:</p>
+<p class="rubric">Input</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;area-1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="kd">var</span> <span class="nx">margin</span> <span class="o">=</span> <span class="p">{</span><span class="nx">top</span><span class="o">:</span> <span class="mi">25</span><span class="p">,</span> <span class="nx">bottom</span><span class="o">:</span> <span class="mi">25</span><span class="p">}</span>
+      <span class="nx">width</span> <span class="o">=</span> <span class="mi">680</span><span class="p">,</span>
+      <span class="nx">height</span> <span class="o">=</span> <span class="mi">340</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">top</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">bottom</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#area-1&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="nx">width</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="nx">height</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">top</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">bottom</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">];</span>
+
+  <span class="nx">yScale</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleLinear</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">extent</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
+      <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">height</span><span class="p">]);</span>
+
+  <span class="kd">var</span> <span class="nx">area</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">area</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">x</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">){</span> <span class="k">return</span> <span class="p">(</span><span class="nx">width</span><span class="o">/</span><span class="nx">data</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span><span class="o">*</span><span class="nx">i</span><span class="p">;</span> <span class="p">})</span>
+      <span class="p">.</span><span class="nx">y0</span><span class="p">(</span><span class="nx">height</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">y1</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="k">return</span> <span class="nx">height</span><span class="o">-</span><span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span> <span class="p">})</span>
+      <span class="p">.</span><span class="nx">curve</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">curveMonotoneX</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="nx">area</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
+      <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="s2">&quot;lightsteelblue&quot;</span><span class="p">);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="rubric">Output</p>
+<div id="area-1"></div>
+<script>
+  var margin = {top: 25, bottom: 25}
+      width = 680,
+      height = 340 - margin.top - margin.bottom;
+
+  var svg = d3.select("#area-1").append("svg")
+      .attr("width", width)
+      .attr("height", height + margin.top + margin.bottom);
+
+  var data = [1, 3, 2, 3, 5, 8, 4, 9];
+
+  yScale = d3.scaleLinear()
+      .domain(d3.extent(data))
+      .range([0, height]);
+
+  var area = d3.area()
+      .x(function(d, i){ return (width/data.length)*i; })
+      .y0(height)
+      .y1(function(d){ return height-yScale(d); })
+      .curve(d3.curveMonotoneX);
+
+  var path = svg.append("path")
+      .attr("d", area(data))
+      .style("fill", "lightsteelblue");
+</script><p>La función <a class="reference external" href="https://github.com/d3/d3-shape/blob/master/README.md#area">d3.area()</a> crea un generador de areas. La línea de arriba se define por los métodos <a class="reference external" href="https://github.com/d3/d3-shape/blob/master/README.md#area_x1">area.x1([x])</a> y <a class="reference external" href="https://github.com/d3/d3-shape/blob/master/README.md#area_y1">area.y1([y])</a>, y es renderizada primero. La línea de abajo se define por los métodos <a class="reference external" href="https://github.com/d3/d3-shape/blob/master/README.md#area_x0">area.x0([x])</a> y <a class="reference external" href="https://github.com/d3/d3-shape/blob/master/README.md#area_y0">area.y0([y])</a>. Las funciones <a class="reference external" href="https://github.com/d3/d3-shape/blob/master/README.md#area_x">area.x([x])</a> y <a class="reference external" href="https://github.com/d3/d3-shape/blob/master/README.md#area_y">area.y([y])</a> establecen los parámetros <code class="docutils literal notranslate"><span class="pre">0</span></code> y <code class="docutils literal notranslate"><span class="pre">1</span></code> de cada coodenada a un mismo valor, es decir:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Esto es lo mismo...</span>
+<span class="p">.</span><span class="nx">x</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">){</span> <span class="k">return</span> <span class="p">(</span><span class="nx">width</span><span class="o">/</span><span class="nx">data</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span><span class="o">*</span><span class="nx">i</span><span class="p">;</span> <span class="p">})</span>
+
+<span class="c1">// ...que esto</span>
+<span class="p">.</span><span class="nx">x0</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">){</span> <span class="k">return</span> <span class="p">(</span><span class="nx">width</span><span class="o">/</span><span class="nx">data</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span><span class="o">*</span><span class="nx">i</span><span class="p">;</span> <span class="p">})</span>
+<span class="p">.</span><span class="nx">x1</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">){</span> <span class="k">return</span> <span class="p">(</span><span class="nx">width</span><span class="o">/</span><span class="nx">data</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span><span class="o">*</span><span class="nx">i</span><span class="p">;</span> <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="links">
+<h2><a class="reference external" href="https://github.com/d3/d3-shape/blob/master/README.md#links">Links</a><a class="headerlink" href="#links" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La forma de <strong>link</strong> genera una curva Bézier cúbica suave desde un punto hasta otro.</p>
+<p>Para incluir un link con un punto inicial y destino indicados manualmente, primero inicializamos un generador <code class="docutils literal notranslate"><span class="pre">link</span></code> que puede ser vertical, horizontal o radial y luego pasamos a la función un objeto con los atributos <code class="docutils literal notranslate"><span class="pre">source</span></code> y <code class="docutils literal notranslate"><span class="pre">target</span></code> donde especificamos las coordenadas de comienzo y final de la línea por medio de arrays numéricos de dos elementos:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">link</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">linkVertical</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="nx">link</span><span class="p">({</span>
+        <span class="nx">source</span><span class="o">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
+        <span class="nx">target</span><span class="o">:</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+    <span class="p">}));</span>
+</pre></div>
+</div>
+<div class="section" id="d3-linkvertical">
+<h3><a class="reference external" href="https://github.com/d3/d3-shape/blob/master/README.md#linkVertical">d3.linkVertical()</a><a class="headerlink" href="#d3-linkvertical" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Genera una curva Bézier cúbica suave con tangentes verticales.</p>
+<p class="rubric">Input</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;link-vertical-1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="kd">var</span> <span class="nx">width</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="nx">height</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#link-vertical-1&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="nx">width</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">link</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">linkVertical</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="nx">link</span><span class="p">({</span>
+        <span class="nx">source</span><span class="o">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
+        <span class="nx">target</span><span class="o">:</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+    <span class="p">}))</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;stroke&quot;</span><span class="p">,</span> <span class="s2">&quot;navy&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;stroke-width&quot;</span><span class="p">,</span> <span class="s2">&quot;3px&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span><span class="p">);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="rubric">Output</p>
+<div id="link-vertical-1"></div>
+<script>
+var width = 300,
+    height = 200;
+
+var svg = d3.select("#link-vertical-1").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var link = d3.linkVertical();
+var path = svg.append("path")
+    .attr("d", link({
+        source: [50, 50],
+        target: [150, 150]
+    }))
+    .style("stroke", "navy")
+    .style("stroke-width", "3px")
+    .style("fill", "none");
+</script></div>
+<div class="section" id="d3-linkhorizontal">
+<h3><a class="reference external" href="https://github.com/d3/d3-shape/blob/master/README.md#linkHorizontal">d3.linkHorizontal()</a><a class="headerlink" href="#d3-linkhorizontal" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Genera una curva Bézier cúbica suave con tangentes horizontales.</p>
+<p class="rubric">Input</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;link-horizontal-1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="kd">var</span> <span class="nx">width</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span>
+      <span class="nx">height</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#link-horizontal-1&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="nx">width</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">link</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">linkHorizontal</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="nx">link</span><span class="p">({</span>
+          <span class="nx">source</span><span class="o">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
+          <span class="nx">target</span><span class="o">:</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+      <span class="p">}))</span>
+      <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;stroke&quot;</span><span class="p">,</span> <span class="s2">&quot;royalblue&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;stroke-width&quot;</span><span class="p">,</span> <span class="s2">&quot;3px&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span><span class="p">);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="rubric">Output</p>
+<div id="link-horizontal-1"></div>
+<script>
+  var width = 300,
+      height = 200;
+
+  var svg = d3.select("#link-horizontal-1").append("svg")
+      .attr("width", width)
+      .attr("height", height);
+
+  var link = d3.linkHorizontal();
+  var path = svg.append("path")
+      .attr("d", link({
+          source: [50, 50],
+          target: [150, 150]
+      }))
+      .style("stroke", "royalblue")
+      .style("stroke-width", "3px")
+      .style("fill", "none");
+</script></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mapas.html" class="btn btn-neutral float-right" title="Mapas — d3-geo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="numeros_aleatorios.html" class="btn btn-neutral" title="Números aleatorios — d3-random" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Álvaro Mondéjar Rubio.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

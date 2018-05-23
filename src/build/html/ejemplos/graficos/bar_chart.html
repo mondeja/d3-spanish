@@ -1,0 +1,564 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gráficos de barras &mdash; documentación de d3-spanish - 0.0.1</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Índice"
+              href="../../genindex.html"/>
+        <link rel="search" title="Búsqueda" href="../../search.html"/>
+    <link rel="top" title="documentación de d3-spanish - 0.0.1" href="../../index.html"/>
+        <link rel="up" title="Gráficos" href="index.html"/>
+        <link rel="next" title="Gráficos de torta (pie)" href="pie_chart.html"/>
+        <link rel="prev" title="Gráficos de lineas" href="line_chart.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> d3-spanish
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Conceptos básicos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/escalas.html">Escalas — d3-scale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/ejes.html">Ejes — d3-axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/timer.html">Timer — d3-timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/numeros_aleatorios.html">Números aleatorios — d3-random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/formas.html">Formas — d3-shape</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/mapas.html">Mapas — d3-geo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/layouts.html">Layouts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Ejemplos</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../escalas_de_colores.html">Escalas de colores</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Gráficos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="line_chart.html">Gráficos de lineas</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Gráficos de barras</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#diferencias-entre-un-grafico-mediante-div-y-svg">Diferencias entre un gráfico mediante <code class="docutils literal notranslate"><span class="pre">div</span></code> y <code class="docutils literal notranslate"><span class="pre">svg</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mediante-elementos-div">Mediante elementos <code class="docutils literal notranslate"><span class="pre">div</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mediante-elementos-svg">Mediante elementos SVG</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pie_chart.html">Gráficos de torta (pie)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Avanzado</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../avanzado/svg/index.html">SVG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../avanzado/canvas/index.html">Canvas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../avanzado/css/index.html">CSS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utilidades</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilidades/data_random_gen.html">Generador de datos aleatorio</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">d3-spanish</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Gráficos</a> &raquo;</li>
+        
+      <li>Gráficos de barras</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/ejemplos/graficos/bar_chart.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="graficos-de-barras">
+<h1>Gráficos de barras<a class="headerlink" href="#graficos-de-barras" title="Enlazar permanentemente con este título">¶</a></h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script><div class="section" id="diferencias-entre-un-grafico-mediante-div-y-svg">
+<h2>Diferencias entre un gráfico mediante <code class="docutils literal notranslate"><span class="pre">div</span></code> y <code class="docutils literal notranslate"><span class="pre">svg</span></code><a class="headerlink" href="#diferencias-entre-un-grafico-mediante-div-y-svg" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En los siguientes dos ejemplos vamos a realizar el mismo gráfico de dos formas diferentes: la primera añadiendo dinámicamente elementos <code class="docutils literal notranslate"><span class="pre">div</span></code> a un contenedor padre y la segunda mediante elementos <code class="docutils literal notranslate"><span class="pre">svg</span></code>.</p>
+<p>El código común a ambos ejemplos es:</p>
+<script>
+  var margin = {top: 20, right: 20, bottom: 20, left: 20},
+      width = 680 - margin.right - margin.left,
+      height = 680 - margin.top - margin.bottom;
+
+  var data = [
+      {coin: "BTC", value: 10000},
+      {coin: "LTC", value: 5000},
+      {coin: "ETH", value: 3000},
+      {coin: "XMR", value: 1500},
+      {coin: "BCH", value: 1000},
+      {coin: "BTZ", value: 400}
+  ]
+
+  scaleX = d3.scaleLinear()
+    .domain([0, d3.max(data, function(d){ return d.value })])
+    .range([0, width - margin.right - margin.left])
+</script><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">margin</span> <span class="o">=</span> <span class="p">{</span><span class="nx">top</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nx">right</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nx">bottom</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nx">left</span><span class="o">:</span> <span class="mi">20</span><span class="p">},</span>
+    <span class="nx">width</span> <span class="o">=</span> <span class="mi">680</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">right</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span>
+    <span class="nx">height</span> <span class="o">=</span> <span class="mi">680</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">top</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">bottom</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="nx">coin</span><span class="o">:</span> <span class="s2">&quot;BTC&quot;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">10000</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">coin</span><span class="o">:</span> <span class="s2">&quot;LTC&quot;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">5000</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">coin</span><span class="o">:</span> <span class="s2">&quot;ETH&quot;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">3000</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">coin</span><span class="o">:</span> <span class="s2">&quot;XMR&quot;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">1500</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">coin</span><span class="o">:</span> <span class="s2">&quot;BCH&quot;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">1000</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">coin</span><span class="o">:</span> <span class="s2">&quot;BTZ&quot;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">400</span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="nx">scaleX</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleLinear</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">value</span> <span class="p">})])</span>
+  <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">width</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">right</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">left</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="section" id="mediante-elementos-div">
+<h3>Mediante elementos <code class="docutils literal notranslate"><span class="pre">div</span></code><a class="headerlink" href="#mediante-elementos-div" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>A continuación puedes observar un ejemplo simple de creación de un gráfico de barras añadiendo contenedores dentro de otro contenedor.</p>
+<p class="rubric">Input</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="p">#</span><span class="nn">chart-1</span> <span class="nt">div</span> <span class="p">{</span>
+    <span class="k">font</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="kc">sans-serif</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">steelblue</span><span class="p">;</span>
+    <span class="k">text-align</span><span class="p">:</span> <span class="kc">right</span><span class="p">;</span>
+    <span class="k">padding</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;chart-1&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;margin-bottom:50px;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#chart-1&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">value</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">transition</span><span class="p">().</span><span class="nx">duration</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="k">return</span> <span class="nx">scaleX</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;px&quot;</span> <span class="p">});</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="rubric">Output</p>
+<style>
+  #chart-1 div {
+    font: 10px sans-serif;
+    background-color: steelblue;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    color: white;
+  }
+</style>
+<div id="chart-1" style="margin-bottom:50px;"></div>
+<script>
+  d3.select("#chart-1")
+    .selectAll("div")
+      .data(data)
+    .enter().append("div")
+      .style("width", 0)
+      .text(function(d) { return d.value })
+    .transition().duration(3000)
+      .style("width", function(d){ return scaleX(d.value) + "px" });
+</script></div>
+<div class="section" id="mediante-elementos-svg">
+<h3>Mediante elementos SVG<a class="headerlink" href="#mediante-elementos-svg" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El movimiento de las barras es más fluido y el gráfico tarda menos en cargar si lo realizamos mediante SVG.</p>
+<p class="rubric">Input</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="p">#</span><span class="nn">chart-2</span> <span class="nt">rect</span> <span class="p">{</span>
+    <span class="n">fill</span><span class="p">:</span> <span class="kc">steelblue</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="p">#</span><span class="nn">chart-2</span> <span class="nt">text</span> <span class="p">{</span>
+    <span class="n">fill</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+    <span class="k">font</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="kc">sans-serif</span><span class="p">;</span>
+    <span class="n">text-anchor</span><span class="p">:</span> <span class="kc">end</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">svg</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;chart-2&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;margin-bottom:30px;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="kd">var</span> <span class="nx">barHeight</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#chart-2&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="nx">width</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="nx">barHeight</span> <span class="o">*</span> <span class="nx">data</span><span class="p">.</span><span class="nx">lenght</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="nx">chart</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;transform&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="s2">&quot;translate(0,&quot;</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">*</span> <span class="nx">barHeight</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">;</span> <span class="p">});</span>
+
+  <span class="nx">bar</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;rect&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">transition</span><span class="p">().</span><span class="nx">duration</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="k">return</span> <span class="nx">scaleX</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;px&quot;</span><span class="p">;</span> <span class="p">})</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="nx">barHeight</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+  <span class="nx">bar</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">transition</span><span class="p">().</span><span class="nx">duration</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">scaleX</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="o">-</span> <span class="mi">3</span><span class="p">;</span> <span class="p">})</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="nx">barHeight</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;dy&quot;</span><span class="p">,</span> <span class="s2">&quot;.35em&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span> <span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="rubric">Output</p>
+<style>
+  #chart-2 rect {
+    fill: steelblue;
+  }
+
+  #chart-2 text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end;
+  }
+</style>
+
+<svg id="chart-2" style="margin-bottom:30px;"></div>
+
+<script>
+  var barHeight = 20;
+
+  var chart = d3.select("#chart-2")
+    .attr("width", width)
+    .attr("height", barHeight * data.length);
+
+  var bar = chart.selectAll("g")
+    .data(data)
+    .enter().append("g")
+    .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
+
+  bar.append("rect")
+      .attr("width", 0)
+    .transition().duration(2000)
+      .attr("width", function(d){ return scaleX(d.value) + "px"; })
+      .attr("height", barHeight-1);
+
+  bar.append("text")
+      .attr("x", 0)
+    .transition().duration(2000)
+      .attr("x", function(d) { return scaleX(d.value) - 3; })
+      .attr("y", barHeight / 2)
+      .attr("dy", ".35em")
+      .text(function(d) { return d.value; });
+</script><div class="section" id="grafico-de-barras-con-datos-reales">
+<h4>Gráfico de barras con datos reales<a class="headerlink" href="#grafico-de-barras-con-datos-reales" title="Enlazar permanentemente con este título">¶</a></h4>
+<p class="rubric">Input</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="p">#</span><span class="nn">chart-3</span> <span class="nt">rect</span> <span class="p">{</span>
+    <span class="n">fill</span><span class="p">:</span> <span class="kc">teal</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="p">#</span><span class="nn">chart-3</span> <span class="nt">text</span> <span class="p">{</span>
+    <span class="n">fill</span><span class="p">:</span> <span class="kc">teal</span><span class="p">;</span>
+    <span class="k">font</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="kc">sans-serif</span><span class="p">;</span>
+    <span class="n">text-anchor</span><span class="p">:</span> <span class="kc">end</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">svg</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;chart-3&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="kd">var</span> <span class="nx">limit</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.coinmarketcap.com/v2/ticker/?limit=&quot;</span> <span class="o">+</span> <span class="nx">limit</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">barHeight</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+  <span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span> <span class="k">throw</span> <span class="nx">error</span> <span class="p">}</span>
+
+    <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">id</span> <span class="k">in</span> <span class="nx">res</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span> <span class="p">{</span>
+      <span class="nx">data</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+        <span class="nx">symbol</span><span class="o">:</span> <span class="nx">res</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="nx">id</span><span class="p">][</span><span class="s2">&quot;symbol&quot;</span><span class="p">],</span>
+        <span class="nx">value</span><span class="o">:</span> <span class="nx">res</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="nx">id</span><span class="p">][</span><span class="s2">&quot;quotes&quot;</span><span class="p">][</span><span class="s2">&quot;USD&quot;</span><span class="p">][</span><span class="s2">&quot;price&quot;</span><span class="p">]</span>
+      <span class="p">})</span>
+    <span class="p">}</span>
+
+    <span class="nx">scaleX</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleLinear</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="mi">2000</span><span class="p">;</span> <span class="p">})])</span>
+      <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">])</span>
+
+    <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#chart-3&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="nx">width</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="nx">barHeight</span> <span class="o">*</span> <span class="nx">data</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="nx">chart</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;transform&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="s2">&quot;translate(0,&quot;</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">*</span> <span class="nx">barHeight</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">;</span> <span class="p">});</span>
+
+    <span class="nx">bar</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;rect&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="k">return</span> <span class="nx">scaleX</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;px&quot;</span><span class="p">;</span> <span class="p">})</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="nx">barHeight</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="nx">bar</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="nx">scaleX</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="o">+</span> <span class="mi">105</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;px&quot;</span><span class="p">;</span> <span class="p">})</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="nx">barHeight</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;dy&quot;</span><span class="p">,</span> <span class="s2">&quot;.35em&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span>  <span class="nx">d</span><span class="p">.</span><span class="nx">symbol</span> <span class="o">+</span> <span class="s2">&quot; --- &quot;</span> <span class="o">+</span> <span class="nx">d</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="s2">&quot; $&quot;</span><span class="p">;</span> <span class="p">});</span>
+
+  <span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="rubric">Output</p>
+<style>
+  #chart-3 rect {
+    fill: teal;
+  }
+
+  #chart-3 text {
+    fill: teal;
+    font: 10px sans-serif;
+    text-anchor: end;
+  }
+</style>
+
+<svg id="chart-3"></svg>
+
+<script>
+  var limit = 20;
+  var url = "https://api.coinmarketcap.com/v2/ticker/?limit=" + limit;
+
+  var barHeight = 20;
+
+  d3.json(url, function(error, res) {
+    if (error) { throw error }
+
+    var data = [];
+    for (var id in res["data"]) {
+      data.push({
+        symbol: res["data"][id]["symbol"],
+        value: res["data"][id]["quotes"]["USD"]["price"]
+      })
+    }
+
+    scaleX = d3.scaleLinear()
+      .domain([0, d3.max(data, function(d){ return d.value + 2000; })])
+      .range([0, width])
+
+    var chart = d3.select("#chart-3")
+      .attr("width", width)
+      .attr("height", barHeight * data.length);
+
+    var bar = chart.selectAll("g")
+        .data(data)
+      .enter().append("g")
+        .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
+
+    bar.append("rect")
+        .attr("width", function(d){ return scaleX(d.value) + "px"; })
+        .attr("height", barHeight-1);
+
+    bar.append("text")
+      .attr("x", function(d) { return (scaleX(d.value) + 105) + "px"; })
+      .attr("y", barHeight / 2)
+      .attr("dy", ".35em")
+      .text(function(d) { return  d.symbol + " --- " + d.value + " $"; });
+
+  });
+</script></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pie_chart.html" class="btn btn-neutral float-right" title="Gráficos de torta (pie)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="line_chart.html" class="btn btn-neutral" title="Gráficos de lineas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Álvaro Mondéjar Rubio.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

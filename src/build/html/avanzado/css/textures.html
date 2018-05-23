@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Texturas con CSS &mdash; documentación de d3-spanish - 0.0.1</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Índice"
+              href="../../genindex.html"/>
+        <link rel="search" title="Búsqueda" href="../../search.html"/>
+    <link rel="top" title="documentación de d3-spanish - 0.0.1" href="../../index.html"/>
+        <link rel="up" title="CSS" href="index.html"/>
+        <link rel="next" title="&lt;no title&gt;" href="../../utilidades/index.html"/>
+        <link rel="prev" title="Enmascaramiento con CSS" href="masking.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> d3-spanish
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Conceptos básicos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/escalas.html">Escalas — d3-scale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/ejes.html">Ejes — d3-axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/timer.html">Timer — d3-timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/numeros_aleatorios.html">Números aleatorios — d3-random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/formas.html">Formas — d3-shape</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Ejemplos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ejemplos/escalas_de_colores.html">Escalas de colores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ejemplos/graficos/index.html">Gráficos</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Avanzado</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../svg/index.html">SVG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../canvas/index.html">Canvas</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CSS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="masking.html">Enmascaramiento con CSS</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Texturas con CSS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aplicar-texturas-a-elementos">Aplicar texturas a elementos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Utilidades</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilidades/data_random_gen.html">Generador de datos aleatorio</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">d3-spanish</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">CSS</a> &raquo;</li>
+        
+      <li>Texturas con CSS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/avanzado/css/textures.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="texturas-con-css">
+<h1>Texturas con CSS<a class="headerlink" href="#texturas-con-css" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="aplicar-texturas-a-elementos">
+<h2>Aplicar texturas a elementos<a class="headerlink" href="#aplicar-texturas-a-elementos" title="Enlazar permanentemente con este título">¶</a></h2>
+<style>
+.grit:after {
+  content: "";
+  background: url('http://support.nature.org/images/earth/assets/grit.PNG') repeat;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 2;
+}
+</style>
+
+<image src="./../../_static/img/camaron.jpg">
+<image class="grit" src="./../../_static/img/camaron.jpg"></div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../utilidades/index.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="masking.html" class="btn btn-neutral" title="Enmascaramiento con CSS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Álvaro Mondéjar Rubio.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

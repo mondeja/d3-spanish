@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mapas — d3-geo &mdash; documentación de d3-spanish - 0.0.1</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Índice"
+              href="../genindex.html"/>
+        <link rel="search" title="Búsqueda" href="../search.html"/>
+    <link rel="top" title="documentación de d3-spanish - 0.0.1" href="../index.html"/>
+        <link rel="next" title="Escalas de colores" href="../ejemplos/escalas_de_colores.html"/>
+        <link rel="prev" title="Formas — d3-shape" href="formas.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> d3-spanish
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Conceptos básicos</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="escalas.html">Escalas — d3-scale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejes.html">Ejes — d3-axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timer.html">Timer — d3-timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numeros_aleatorios.html">Números aleatorios — d3-random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formas.html">Formas — d3-shape</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mapas — d3-geo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#svg">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas">Canvas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#proyecciones">Proyecciones</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#metodos">Métodos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rejillas">Rejillas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Métodos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Ejemplos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ejemplos/escalas_de_colores.html">Escalas de colores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejemplos/graficos/index.html">Gráficos</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Avanzado</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../avanzado/svg/index.html">SVG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../avanzado/canvas/index.html">Canvas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../avanzado/css/index.html">CSS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utilidades</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../utilidades/data_random_gen.html">Generador de datos aleatorio</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">d3-spanish</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Mapas — d3-geo</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/basico/mapas.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mapas-d3-geo">
+<span id="mapas-section"></span><h1>Mapas — <a class="reference external" href="https://github.com/d3/d3-geo">d3-geo</a><a class="headerlink" href="#mapas-d3-geo" title="Enlazar permanentemente con este título">¶</a></h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script><p>Para generar mapas en D3 seguimos los siguientes pasos:</p>
+<p>Generamos un objeto <code class="docutils literal notranslate"><span class="pre">path</span></code> con la función <a class="reference external" href="https://github.com/d3/d3-geo#geoPath">d3.geoPath()</a> añadiéndole una <a class="reference external" href="https://github.com/d3/d3-geo#path_projection">proyección de las tantas existentes</a>  en <a class="reference external" href="https://github.com/d3/d3-geo">d3-geo</a>. Un ejemplo sería:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geoPath</span><span class="p">().</span><span class="nx">projection</span><span class="p">(</span><span class="nx">geoAzimuthalEquidistant</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>O también:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">projection</span> <span class="o">=</span> <span class="nx">geoAzimuthalEquidistant</span><span class="p">(),</span>
+    <span class="nx">path</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geoPath</span><span class="p">(</span><span class="nx">projection</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Podemos optar por renderizar el mapa con <code class="docutils literal notranslate"><span class="pre">svg</span></code> o con <code class="docutils literal notranslate"><span class="pre">canvas</span></code>, vamos a explorar ambas opciones.</p>
+<div class="section" id="svg">
+<h2>SVG<a class="headerlink" href="#svg" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Obtenemos el elemento <code class="docutils literal notranslate"><span class="pre">svg</span></code> donde queremos representar el mapa. A este le añadimos los datos con <a class="reference external" href="https://github.com/d3/d3-selection/blob/master/README.md#selection_data">data()</a> o <a class="reference external" href="https://github.com/d3/d3-selection/blob/master/README.md#selection_datum">datum()</a> y mediante el atributo <code class="docutils literal notranslate"><span class="pre">&quot;d&quot;</span></code> insertamos el <code class="docutils literal notranslate"><span class="pre">path</span></code> que hemos creado anteriormente:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;example_map&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/topojson-client@3&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;https://unpkg.com/world-atlas@1.1.4/world/110m.json&quot;</span><span class="p">;</span>
+  <span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">world</span><span class="p">){</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+
+      <span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#example_map&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">feature</span><span class="p">(</span><span class="nx">world</span><span class="p">,</span> <span class="nx">world</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">land</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+  <span class="p">})</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Lee <a class="reference external" href="https://gist.github.com/hugolpz/824446bb2f9bc8cce607">este artículo</a> para entender la diferencia entre <a class="reference external" href="https://github.com/d3/d3-selection/blob/master/README.md#selection_data">data()</a> o <a class="reference external" href="https://github.com/d3/d3-selection/blob/master/README.md#selection_datum">datum()</a>.</p>
+</div>
+<p class="rubric">Input</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">#</span><span class="nn">map-1</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="kc">skyblue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">province</span> <span class="p">{</span>
+  <span class="n">fill</span><span class="p">:</span> <span class="kc">royalblue</span><span class="p">;</span>
+  <span class="n">stroke</span><span class="p">:</span> <span class="mh">#FFF</span><span class="p">;</span>
+  <span class="n">stroke-width</span><span class="p">:</span> <span class="mf">.5</span><span class="kt">px</span><span class="p">;</span>
+  <span class="n">stroke-dasharray</span><span class="p">:</span> <span class="mi">3</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">province</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+  <span class="n">fill</span><span class="p">:</span> <span class="kc">crimson</span><span class="p">;</span>
+  <span class="n">stroke</span><span class="p">:</span> <span class="kc">orange</span><span class="p">;</span>
+  <span class="n">stroke-width</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+  <span class="n">stroke-dasharray</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">graticule</span> <span class="p">{</span>
+  <span class="n">fill</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+  <span class="n">stroke</span><span class="p">:</span> <span class="mh">#FFF</span><span class="p">;</span>
+  <span class="n">stroke-width</span><span class="p">:</span> <span class="mf">.6</span><span class="kt">px</span><span class="p">;</span>
+  <span class="n">stroke-opacity</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">svg</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;map-1&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;748&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#map-1&quot;</span><span class="p">),</span>
+      <span class="nx">width</span> <span class="o">=</span> <span class="o">+</span><span class="nx">svg</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">),</span>
+      <span class="nx">height</span> <span class="o">=</span> <span class="o">+</span><span class="nx">svg</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">);</span>
+
+  <span class="c1">// Creamos la proyección  (ver Proyecciones abajo)</span>
+  <span class="kd">var</span> <span class="nx">projection</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geoMercator</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">scale</span><span class="p">(</span><span class="mi">2200</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">center</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">translate</span><span class="p">([</span><span class="nx">width</span> <span class="o">/</span> <span class="mf">1.7</span><span class="p">,</span> <span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]);</span>
+    <span class="c1">//.translate([350, 200]);         // Otros atributos</span>
+    <span class="c1">//.rotate([122.4194, -37.7749])</span>
+    <span class="c1">//.clipAngle(180 - 1e-3)</span>
+    <span class="c1">//.precision(0.1);</span>
+
+  <span class="c1">// Creamos el path añadiendo la proyección</span>
+  <span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geoPath</span><span class="p">(</span><span class="nx">projection</span><span class="p">),</span>
+
+  <span class="c1">// Creamos una rejilla que se repita cada 2 grados tanto</span>
+  <span class="c1">//   en direcciones norte-sur como este-oeste</span>
+  <span class="kd">var</span> <span class="nx">graticule</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geoGraticule</span><span class="p">().</span><span class="nx">step</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]);</span>
+
+  <span class="c1">// Añadimos la rejilla</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">graticule</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;graticule&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+
+  <span class="c1">// Obtenemos las provincias de España en formato geojson</span>
+  <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/spain-provinces.geojson&quot;</span><span class="p">;</span>
+  <span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">spain</span><span class="p">){</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>  <span class="c1">// Manejamos cualquier posible error</span>
+
+      <span class="kd">var</span> <span class="nx">group</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>  <span class="c1">// Creamos un grupo para cada provincia</span>
+          <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">spain</span><span class="p">.</span><span class="nx">features</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+          <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">);</span>
+
+      <span class="c1">// Para cada grupo añadimos el path correspondiente</span>
+      <span class="kd">var</span> <span class="nx">areas</span> <span class="o">=</span> <span class="nx">group</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="nx">path</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;province&quot;</span><span class="p">);</span>
+
+  <span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="rubric">Output</p>
+<style>
+#map-1 {
+  background-color: skyblue;
+}
+.province {
+  fill: royalblue;
+  stroke: #FFF;
+  stroke-width: .5px;
+  stroke-dasharray: 3 3;
+}
+
+.province:hover {
+  fill: crimson;
+  stroke: orange;
+  stroke-width: 2px;
+  stroke-dasharray: none;
+
+}
+
+.graticule {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: .6px;
+  stroke-opacity: 0.5;
+}
+</style>
+
+<svg id="map-1" width="748" height="500"></svg>
+<br>
+
+<script>
+  var svg = d3.select("#map-1"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height");
+
+  console.log(width);
+  var projection = d3.geoMercator()
+    .scale(2200)
+    .center([0, 40])
+    .translate([width / 1.7, height / 2]);
+
+  var path = d3.geoPath(projection),
+      graticule = d3.geoGraticule().step([2, 2]);
+
+  svg.append("path")
+      .datum(graticule)
+      .attr("class", "graticule")
+      .attr("d", path);
+
+  var url = "https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/spain-provinces.geojson";
+  d3.json(url, function(error, spain){
+       var group = svg.selectAll("g")
+          .data(spain.features)
+          .enter()
+          .append("g");
+
+      var areas = group.append("path")
+          .attr("d", path)
+          .attr("class", "province");
+
+  });
+</script><p>Como puedes observar en este ejemplo, básicamente son 6 pasos.</p>
+<ol class="arabic simple">
+<li>Crear una proyección (ver <a class="reference internal" href="#proyecciones"><span class="std std-ref">Proyecciones</span></a>).</li>
+<li>Crear un <code class="docutils literal notranslate"><span class="pre">path</span></code> con la función <a class="reference external" href="https://github.com/d3/d3-geo#geoPath">d3.geoPath()</a> y añadirle la proyección.</li>
+<li>[Opcional] Crear una rejilla con la función <a class="reference external" href="https://github.com/d3/d3-geo#geoGraticule">d3.geoGraticule()</a>. Añadir un elemento <code class="docutils literal notranslate"><span class="pre">path</span></code> al svg, enlazar los datos de la cuadrícula con la función <a class="reference external" href="https://github.com/d3/d3-selection/blob/master/README.md#selection_datum">datum()</a> y añadir el <code class="docutils literal notranslate"><span class="pre">path</span></code> del paso anterior al atributo <code class="docutils literal notranslate"><span class="pre">d</span></code>.</li>
+<li>Obtener los datos geográficos del mapa.</li>
+<li>Enlazar los datos al contenedor <code class="docutils literal notranslate"><span class="pre">svg</span></code> por medio de grupos.</li>
+<li>Añadir a cada grupo un elemento <code class="docutils literal notranslate"><span class="pre">path</span></code>, cuyo atributo <code class="docutils literal notranslate"><span class="pre">d</span></code> será el path que hemos creado en el paso 2.</li>
+</ol>
+</div>
+<div class="section" id="canvas">
+<h2>Canvas<a class="headerlink" href="#canvas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para crear un mapa usando elementos <code class="docutils literal notranslate"><span class="pre">canvas</span></code> habría que escribir algo como esto:</p>
+<p class="rubric">Input</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;680&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;480&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/topojson-client@3&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+
+  <span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;canvas&quot;</span><span class="p">).</span><span class="nx">node</span><span class="p">().</span><span class="nx">getContext</span><span class="p">(</span><span class="s2">&quot;2d&quot;</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">projection</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geoMercator</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">scale</span><span class="p">(</span><span class="mi">2200</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">center</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">translate</span><span class="p">([</span><span class="nx">width</span> <span class="o">/</span> <span class="mf">1.7</span><span class="p">,</span> <span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]);</span>
+
+  <span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geoPath</span><span class="p">(</span><span class="nx">projection</span><span class="p">).</span><span class="nx">context</span><span class="p">(</span><span class="nx">context</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/spain-provinces.geojson&quot;</span><span class="p">;</span>
+  <span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">spain</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+
+      <span class="c1">// Comenzamos a dibujar en el lienzo</span>
+      <span class="nx">context</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+
+      <span class="c1">// Añadimos el path con los datos del archivo .json</span>
+      <span class="nx">path</span><span class="p">(</span><span class="nx">topojson</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span><span class="nx">spain</span><span class="p">));</span>
+
+      <span class="c1">// Dibujamos el contenido</span>
+      <span class="nx">context</span><span class="p">.</span><span class="nx">stroke</span><span class="p">();</span>
+  <span class="p">});</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="rubric">Output</p>
+<canvas id="map-2" width="680" height="480"></canvas>
+
+<script src="https://unpkg.com/topojson-client@3"></script>
+<script>
+
+  var context = d3.select("#map-2").node().getContext("2d");
+
+  var projection = d3.geoMercator()
+    .scale(2200)
+    .center([0, 40])
+    .translate([width / 1.7, height / 2]);
+
+  var path = d3.geoPath(projection).context(context);
+
+  var url = "https://raw.githubusercontent.com/deldersveld/topojson/master/countries/spain/spain-comunidad.json";
+
+  d3.json(url, function(error, spain) {
+      if (error) throw error;
+
+      context.beginPath();
+      path(topojson.mesh(spain));
+      context.stroke();
+  });
+
+</script><p>En este ejemplo, mucho más simple, hemos usado <a class="reference external" href="https://github.com/topojson/topojson">topojson</a> para cargar los datos del archivo en json e insetarlos en el canvas.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">Ver también</p>
+<ul class="last simple">
+<li><a class="reference external" href="https://www.w3schools.com/tags/canvas_beginpath.asp">context.beginPath()</a></li>
+<li><a class="reference external" href="https://www.w3schools.com/tags/canvas_stroke.asp">context.stroke()</a></li>
+<li><a class="reference external" href="https://github.com/topojson/topojson-client/blob/master/README.md#mesh">topojson.mesh(topology [, object[, filter]])</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="proyecciones">
+<span id="id1"></span><h2>Proyecciones<a class="headerlink" href="#proyecciones" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>D3 provee muchas proyecciones dentro de los módulos <a class="reference external" href="https://github.com/d3/d3-geo">d3-geo</a> y <a class="reference external" href="https://github.com/d3/d3-geo-projection">d3-geo-projection</a>. Cada proyección puede ser controlada mediante métodos.</p>
+<div class="section" id="metodos">
+<h3>Métodos<a class="headerlink" href="#metodos" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/d3/d3-geo#projection_scale">projection.scale([scale])</a>: El factor de escalado corresponde linealmente a la distancia entre los puntos projectados; sin embargo, mismos factores de escalado no son equivalentes entre diferentes proyecciones.</li>
+<li><a class="reference external" href="https://github.com/d3/d3-geo#projection_center">projection.center([center])</a>: Array de dos elementos con las coordenadas longitud y latitud en grados (por defecto <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0]</span></code>).</li>
+<li><a class="reference external" href="https://github.com/d3/d3-geo#projection_translate">projection.translate([translate])</a>: si se especifica el parámetro <code class="docutils literal notranslate"><span class="pre">translate</span></code>, el la proyección será trasladada en los ejes <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> según los valores introducidos (por defecto <code class="docutils literal notranslate"><span class="pre">[480,</span> <span class="pre">250]</span></code>).</li>
+<li><a class="reference external" href="https://github.com/d3/d3-geo#projection_rotate">projection.rotate([angles])</a>: Si él parámetro <code class="docutils literal notranslate"><span class="pre">angles</span></code> es introducido, establece la rotación esférica sobre los tres ejes a los ángulos especificado, el cual debe ser un array de dos ó tres números <code class="docutils literal notranslate"><span class="pre">[lambda,</span> <span class="pre">phi,</span> <span class="pre">gamma]</span></code> , especificando los ángulos de rotación en grados sobre cada eje esférico (por defecto <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]</span></code>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="rejillas">
+<h2>Rejillas<a class="headerlink" href="#rejillas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Con esta función creamos una rejilla. Para añadir una rejilla simplemente hemos de insertarla en el contenedor <code class="docutils literal notranslate"><span class="pre">svg</span></code> con la función <a class="reference external" href="https://github.com/d3/d3-selection/blob/master/README.md#selection_datum">datum()</a>:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">graticule</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geoGraticule</span><span class="p">().</span><span class="nx">step</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]);</span>
+
+<span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">graticule</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h3>Métodos<a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/d3/d3-geo#graticule_step">graticule.step([step])</a>: Acepta un array de dos números que indican los grados de distancia entre cada filamento de la rejilla. El primero indica diferencia entre longitudes y el segundo latitudes.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ejemplos/escalas_de_colores.html" class="btn btn-neutral float-right" title="Escalas de colores" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="formas.html" class="btn btn-neutral" title="Formas — d3-shape" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Álvaro Mondéjar Rubio.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

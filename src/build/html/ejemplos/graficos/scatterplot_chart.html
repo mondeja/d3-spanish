@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gráficos de dispersión &mdash; documentación de d3-spanish - 0.0.1</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Índice"
+              href="../../genindex.html"/>
+        <link rel="search" title="Búsqueda" href="../../search.html"/>
+    <link rel="top" title="documentación de d3-spanish - 0.0.1" href="../../index.html"/>
+        <link rel="up" title="Gráficos" href="index.html"/>
+        <link rel="next" title="SVG" href="../../avanzado/svg/index.html"/>
+        <link rel="prev" title="Gráficos de torta (pie)" href="pie_chart.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> d3-spanish
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Conceptos básicos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/escalas.html">Escalas — d3-scale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/ejes.html">Ejes — d3-axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/timer.html">Timer — d3-timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/numeros_aleatorios.html">Números aleatorios — d3-random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/formas.html">Formas — d3-shape</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/mapas.html">Mapas — d3-geo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/layouts.html">Layouts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Ejemplos</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../escalas_de_colores.html">Escalas de colores</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Gráficos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="line_chart.html">Gráficos de lineas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bar_chart.html">Gráficos de barras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pie_chart.html">Gráficos de torta (pie)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Gráficos de dispersión</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#iris-dataset">Iris dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Avanzado</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../avanzado/svg/index.html">SVG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../avanzado/canvas/index.html">Canvas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../avanzado/css/index.html">CSS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utilidades</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilidades/data_random_gen.html">Generador de datos aleatorio</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">d3-spanish</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Gráficos</a> &raquo;</li>
+        
+      <li>Gráficos de dispersión</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/ejemplos/graficos/scatterplot_chart.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="graficos-de-dispersion">
+<h1>Gráficos de dispersión<a class="headerlink" href="#graficos-de-dispersion" title="Enlazar permanentemente con este título">¶</a></h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script><div class="section" id="iris-dataset">
+<h2>Iris dataset<a class="headerlink" href="#iris-dataset" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En este ejemplo hemos usado la escala de colores <a class="reference external" href="https://github.com/d3/d3-scale-chromatic#schemeDark2">d3.schemeDark2</a>, por lo que hemos de cargar el módulo <a class="reference external" href="https://github.com/d3/d3-scale-chromatic">d3-scale-chromatic</a> con:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://d3js.org/d3-scale-chromatic.v1.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="rubric">Input</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;scatterplot-graph-1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="kd">var</span> <span class="nx">margin</span> <span class="o">=</span> <span class="p">{</span><span class="nx">top</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span> <span class="nx">right</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span> <span class="nx">bottom</span><span class="o">:</span> <span class="mi">40</span><span class="p">,</span> <span class="nx">left</span><span class="o">:</span> <span class="mi">40</span><span class="p">};</span>
+  <span class="kd">var</span> <span class="nx">width</span> <span class="o">=</span> <span class="mi">680</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">left</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">right</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">height</span> <span class="o">=</span> <span class="mi">450</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">top</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">bottom</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#scatterplot-graph-1&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="nx">width</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">left</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">right</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="nx">height</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">top</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">bottom</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;transform&quot;</span><span class="p">,</span> <span class="s2">&quot;translate(&quot;</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">left</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">top</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">xScale</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleLinear</span><span class="p">().</span><span class="nx">range</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">]);</span>
+  <span class="kd">var</span> <span class="nx">yScale</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleLinear</span><span class="p">().</span><span class="nx">range</span><span class="p">([</span><span class="nx">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">]);</span>
+
+  <span class="kd">var</span> <span class="nx">xAxis</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">axisBottom</span><span class="p">().</span><span class="nx">scale</span><span class="p">(</span><span class="nx">xScale</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">yAxis</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">axisLeft</span><span class="p">().</span><span class="nx">scale</span><span class="p">(</span><span class="nx">yScale</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleOrdinal</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">schemeDark2</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;https://gist.githubusercontent.com/Jverma/076377dd0125b1a508621441752735fc/raw/b3c1e1bdafd135d6cd01f5a4b53f1bd347dacd03/iris.csv&quot;</span><span class="p">;</span>
+
+  <span class="nx">d3</span><span class="p">.</span><span class="nx">csv</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">data</span><span class="p">){</span>
+      <span class="nx">xScale</span><span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">extent</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+          <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">SepalLength</span><span class="p">;</span>
+      <span class="p">})).</span><span class="nx">nice</span><span class="p">();</span>
+
+      <span class="nx">yScale</span><span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">extent</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+          <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">SepalWidth</span><span class="p">;</span>
+      <span class="p">})).</span><span class="nx">nice</span><span class="p">();</span>
+
+      <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;transform&quot;</span><span class="p">,</span> <span class="s2">&quot;translate(0,&quot;</span> <span class="o">+</span> <span class="nx">height</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">xAxis</span><span class="p">);</span>
+
+      <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;transform&quot;</span><span class="p">,</span> <span class="s2">&quot;translate(0,0)&quot;</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">yAxis</span><span class="p">);</span>
+
+      <span class="kd">var</span> <span class="nx">bubble</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">&quot;.bubble&quot;</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;circle&quot;</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;cx&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="k">return</span> <span class="nx">xScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">SepalLength</span><span class="p">);</span> <span class="p">})</span>
+          <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;cy&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="k">return</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">SepalWidth</span><span class="p">);</span> <span class="p">})</span>
+          <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;3px&quot;</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="k">return</span> <span class="nx">color</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">Name</span><span class="p">);</span> <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="rubric">Output</p>
+<div id="scatterplot-graph-1"></div>
+<script>
+  var margin = {top: 30, right: 50, bottom: 40, left: 40};
+  var width = 680 - margin.left - margin.right;
+  var height = 450 - margin.top - margin.bottom;
+
+  var svg = d3.select("#scatterplot-graph-1").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  var xScale = d3.scaleLinear().range([0, width]);
+  var yScale = d3.scaleLinear().range([height, 0]);
+
+  var xAxis = d3.axisBottom().scale(xScale);
+  var yAxis = d3.axisLeft().scale(yScale);
+
+  var color = d3.scaleOrdinal(d3.schemeDark2);
+
+  var url = "https://gist.githubusercontent.com/Jverma/076377dd0125b1a508621441752735fc/raw/b3c1e1bdafd135d6cd01f5a4b53f1bd347dacd03/iris.csv";
+
+  d3.csv(url, function(error, data){
+      xScale.domain(d3.extent(data, function(d){
+          return d.SepalLength;
+      })).nice();
+
+      yScale.domain(d3.extent(data, function(d){
+          return d.SepalWidth;
+      })).nice();
+
+      svg.append("g")
+          .attr("transform", "translate(0," + height + ")")
+          .call(xAxis);
+
+      svg.append("g")
+          .attr("transform", "translate(0,0)")
+          .call(yAxis);
+
+      var bubble = svg.selectAll(".bubble")
+          .data(data)
+          .enter().append("circle")
+          .attr("cx", function(d){ return xScale(d.SepalLength); })
+          .attr("cy", function(d){ return yScale(d.SepalWidth); })
+          .attr("r", "3px")
+          .style("fill", function(d){ return color(d.Name); });
+  });
+</script></div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../avanzado/svg/index.html" class="btn btn-neutral float-right" title="SVG" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pie_chart.html" class="btn btn-neutral" title="Gráficos de torta (pie)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Álvaro Mondéjar Rubio.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

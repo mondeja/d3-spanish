@@ -56,7 +56,7 @@ Otra noción básica de las escalas son los interpoladores. En matemáticas la `
 
 .. note::
 
-   `Aquí puedes ver ejemplos de interpoladores usados para mapear escalas de colores <https://d3-spanish.readthedocs.io/es/latest/basico/escalas_de_colores.html>`__.
+   `Aquí puedes ver ejemplos de interpoladores usados en D3JS para mapear escalas de colores y una implementación básica en Python <https://d3-spanish.readthedocs.io/es/latest/basico/escalas_de_colores.html>`__.
 
 - `Interpolar (RAE) <http://dle.rae.es/?id=LwIT8WI>`__: **Calcular el valor aproximado de una magnitud en un intervalo cuando se conocen algunos de los valores que toma a uno y otro lado de dicho intervalo**.
 

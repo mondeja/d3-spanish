@@ -16,6 +16,7 @@ Escalas de colores
      <rect id="color1" x="0" y="0" width="50%" height="100%"></rect>
      <rect id="color2" x="50%" y="0" width="50%" height="100%"></rect>
    </svg>
+   <br><br>
    <script>
      var color1 = "#007AFF",
          color2 = "#FFF500";
@@ -160,7 +161,7 @@ Devuelve un interpolador en el espacio de color HCL entre los colores ``a`` y ``
 
 .. raw:: html
 
-   <svg id="colors-interpolate-hcl"></div>
+   <svg id="colors-interpolate-hcl"></svg>
 
    <script>
      renderColorsBar("#colors-interpolate-hcl", d3.interpolateHcl);
@@ -173,13 +174,96 @@ Devuelve un interpolador en el espacio de color Cubehelix entre los colores ``a`
 
 .. raw:: html
 
-   <svg id="colors-interpolate-cubehelix"></div>
+   <svg id="colors-interpolate-cubehelix"></svg>
 
    <script>
      renderColorsBar("#colors-interpolate-cubehelix", d3.interpolateCubehelix);
    </script>
 
 
+Un interpolador de color RGB básico en Python
+=============================================
+
+Para entender claramente lo que hacen los interpoladores, pongamos este sencillo interpolador RGB de ejemplo con Python (`el código fuente está sacado de aquí <https://gist.github.com/lambdamusic/4734406>`__):
+
+.. code-block:: python
+
+   import string
+
+   def make_color_tuple(color):
+       """Convierte algo como "#000000" en "0,0,0"
+       ó "#FFFFFF" en "255,255,255".
+       """
+       R = color[1:3]
+       G = color[3:5]
+       B = color[5:7]
+
+       R = int(R, 16)
+       G = int(G, 16)
+       B = int(B, 16)
+
+       return R,G,B
+
+   def interpolate_tuple( startcolor, goalcolor, steps ):
+       """Toma dos colores RGB o los mezcla en
+       un número específico de pasos. Devuelve
+       la lista de todos los colores generados.
+       """
+       R = startcolor[0]
+       G = startcolor[1]
+       B = startcolor[2]
+
+       targetR = goalcolor[0]
+       targetG = goalcolor[1]
+       targetB = goalcolor[2]
+
+       DiffR = targetR - R
+       DiffG = targetG - G
+       DiffB = targetB - B
+
+       buffer = []
+
+       for i in range(0, steps +1):
+           iR = R + (DiffR * i / steps)
+           iG = G + (DiffG * i / steps)
+           iB = B + (DiffB * i / steps)
+
+           hR = string.replace(hex(iR), "0x", "")
+           hG = string.replace(hex(iG), "0x", "")
+           hB = string.replace(hex(iB), "0x", "")
+
+           if len(hR) == 1:
+               hR = "0" + hR
+           if len(hB) == 1:
+               hB = "0" + hB
+
+           if len(hG) == 1:
+               hG = "0" + hG
+
+           color = string.upper("#"+hR+hG+hB)
+           buffer.append(color)
+
+       return buffer
+
+   def interpolate(startcolor, goalcolor, steps):
+       """Envoltura para la función ``interpolate_tuple``
+       que acepta colores como "#CCCCCC".
+       """
+       start_tuple = make_color_tuple(startcolor)
+       goal_tuple = make_color_tuple(goalcolor)
+
+       return interpolate_tuple(start_tuple, goal_tuple, steps)
+
+
+   def printchart(startcolor, endcolor, steps):
+       colors = interpolate(startcolor, endcolor, steps)
+
+       for color in colors:
+           print(color)
+
+
+   # Muestra 16 valores de gradiente entre esos dos colores
+   printchart("#999933", "#6666FF", 16)
 
 
 .. _d3-interpolate: https://github.com/d3/d3-interpolate

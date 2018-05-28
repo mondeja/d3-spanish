@@ -51,7 +51,12 @@ Las escalas no sólo representan datos matemáticos, si no cualquier rango de ma
 Interpoladores
 ==============
 
+
 Otra noción básica de las escalas son los interpoladores. En matemáticas la `interpolación <https://es.wikipedia.org/wiki/Interpolaci%C3%B3n>`__ es la obtención de nuevos puntos partiendo del conocimiento de un conjunto discreto de puntos.
+
+.. note::
+
+   `Aquí puedes ver ejemplos de interpoladores usados para mapear escalas de colores <https://d3-spanish.readthedocs.io/es/latest/basico/escalas_de_colores.html>`__.
 
 - `Interpolar (RAE) <http://dle.rae.es/?id=LwIT8WI>`__: **Calcular el valor aproximado de una magnitud en un intervalo cuando se conocen algunos de los valores que toma a uno y otro lado de dicho intervalo**.
 

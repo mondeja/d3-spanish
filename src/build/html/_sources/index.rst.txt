@@ -20,6 +20,7 @@ Libro de cocina de D3js en español
    basico/mapas
    basico/layouts
    basico/animaciones
+   basico/poligonos
 
 .. toctree::
    :maxdepth: 2

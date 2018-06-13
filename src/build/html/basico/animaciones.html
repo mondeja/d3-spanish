@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Animaciones &mdash; documentación de d3-spanish - 0.0.1</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Índice"
+              href="../genindex.html"/>
+        <link rel="search" title="Búsqueda" href="../search.html"/>
+    <link rel="top" title="documentación de d3-spanish - 0.0.1" href="../index.html"/>
+        <link rel="next" title="Gráficos" href="../ejemplos/graficos/index.html"/>
+        <link rel="prev" title="Layouts" href="layouts.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> d3-spanish
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Conceptos básicos</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="escalas.html">Escalas — d3-scale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejes.html">Ejes — d3-axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="escalas_de_colores.html">Escalas de colores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timer.html">Timer — d3-timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numeros_aleatorios.html">Números aleatorios — d3-random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formas.html">Formas — d3-shape</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapas.html">Mapas — d3-geo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layouts.html">Layouts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Animaciones</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#transiciones-d3-transition">Transiciones – d3-transition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desenvoltura-de-transiciones-d3-ease">Desenvoltura de transiciones – d3-ease</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Ejemplos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ejemplos/graficos/index.html">Gráficos</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Avanzado</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../avanzado/svg/index.html">SVG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../avanzado/canvas/index.html">Canvas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../avanzado/css/index.html">CSS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utilidades</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../utilidades/data_random_gen.html">Generador de datos aleatorio</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">d3-spanish</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Animaciones</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/basico/animaciones.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="animaciones">
+<h1>Animaciones<a class="headerlink" href="#animaciones" title="Enlazar permanentemente con este título">¶</a></h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script><div class="section" id="transiciones-d3-transition">
+<h2>Transiciones – <a class="reference external" href="https://github.com/d3/d3-transition">d3-transition</a><a class="headerlink" href="#transiciones-d3-transition" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para crear transiciones usamos la función <a class="reference external" href="https://github.com/d3/d3-transition#selection_transition">selection.transition()</a> sobre una selección.</p>
+<p class="rubric">Input</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="p">#</span><span class="nn">contenedor1</span> <span class="p">{</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">600</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span> <span class="kc">auto</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">gold</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#contenedor1&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">transition</span><span class="p">()</span>     <span class="c1">// Creamos una transición</span>
+    <span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>   <span class="c1">// - Tiempo que tardará</span>
+    <span class="p">.</span><span class="nx">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>      <span class="c1">// - Tiempo en espera antes de activar la transición</span>
+      <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;navy&quot;</span><span class="p">);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="rubric">Output</p>
+<style>
+  #contenedor1 {
+    height: 100px;
+    width: 600px;
+    margin: 12px auto;
+    background-color: gold;
+  }
+</style>
+
+<div id="contenedor1"></div>
+
+<script>
+  d3.select("#contenedor1")
+    .transition()
+    .duration(3000)
+    .delay(2000)
+      .style("background-color", "navy");
+</script>
+<br><br></div>
+<div class="section" id="desenvoltura-de-transiciones-d3-ease">
+<h2>Desenvoltura de transiciones – <a class="reference external" href="https://github.com/d3/d3-ease">d3-ease</a><a class="headerlink" href="#desenvoltura-de-transiciones-d3-ease" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Podemos definir como se comportan las transiciones mediante diferentes funciones que flexibilizan el movimiento de transición. Simplemente la aplicamos mediante la función <a class="reference external" href="https://github.com/d3/d3-ease#_ease">transition.ease()</a> a una transición (por defecto <a class="reference external" href="https://github.com/d3/d3-ease#easeCubicInOut">easeCubicInOut()</a>).</p>
+<center><h5><a style="color:firebrick;" href="https://bl.ocks.org/d3noob/1ea51d03775b9650e8dfd03474e202fe">Comparación entre diferentes funciones de transición</a></h5></center>
+<center><h5><a style="color:green;" href="https://bl.ocks.org/mbostock/248bac3b8e354a9103c4">Explorador de funciones de transición</a></h5></center><p>Los nombres de las diferentes funciones se pueden observar en el explorador de funciones, además de en la documentación  de <a class="reference external" href="https://github.com/d3/d3-ease">d3-ease</a>.</p>
+<p class="rubric">Input</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="p">#</span><span class="nn">contenedor2</span> <span class="p">{</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">600</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span> <span class="kc">auto</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">dodgerblue</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contenedor2&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#contenedor2&quot;</span><span class="p">)</span>
+     <span class="p">.</span><span class="nx">transition</span><span class="p">()</span>
+     <span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>
+     <span class="p">.</span><span class="nx">delay</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span>
+     <span class="p">.</span><span class="nx">ease</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">easeElasticOut</span><span class="p">)</span>   <span class="c1">// Indicamos la función de transición flexible</span>
+       <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="s2">&quot;200px&quot;</span><span class="p">);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="rubric">Output</p>
+<style>
+  #contenedor2 {
+    height: 100px;
+    width: 600px;
+    margin: 12px auto;
+    background-color: dodgerblue;
+  }
+</style>
+<div id="contenedor2"></div>
+
+<script>
+  d3.select("#contenedor2")
+     .transition()
+     .duration(4000)
+     .delay(4000)
+     .ease(d3.easeElasticOut)
+       .style("width", "200px");
+</script>
+<br><br></div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ejemplos/graficos/index.html" class="btn btn-neutral float-right" title="Gráficos" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="layouts.html" class="btn btn-neutral" title="Layouts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Álvaro Mondéjar Rubio.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

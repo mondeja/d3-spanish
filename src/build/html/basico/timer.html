@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Timer — d3-timer &mdash; documentación de d3-spanish - 0.0.1</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Índice"
+              href="../genindex.html"/>
+        <link rel="search" title="Búsqueda" href="../search.html"/>
+    <link rel="top" title="documentación de d3-spanish - 0.0.1" href="../index.html"/>
+        <link rel="next" title="Números aleatorios — d3-random" href="numeros_aleatorios.html"/>
+        <link rel="prev" title="Escalas de colores" href="escalas_de_colores.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> d3-spanish
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Conceptos básicos</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="escalas.html">Escalas — d3-scale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejes.html">Ejes — d3-axis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="escalas_de_colores.html">Escalas de colores</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Timer — d3-timer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#funciones-utiles">Funciones útiles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#d3-now">d3.now()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#temporizadores">Temporizadores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#d3-timer">d3.timer()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#timer-stop">timer.stop()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#timer-restart">timer.restart()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#d3-timeout">d3.timeout()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#d3-interval">d3.interval()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="numeros_aleatorios.html">Números aleatorios — d3-random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formas.html">Formas — d3-shape</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapas.html">Mapas — d3-geo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layouts.html">Layouts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animaciones.html">Animaciones</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Ejemplos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ejemplos/graficos/index.html">Gráficos</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Avanzado</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../avanzado/svg/index.html">SVG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../avanzado/canvas/index.html">Canvas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../avanzado/css/index.html">CSS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utilidades</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../utilidades/data_random_gen.html">Generador de datos aleatorio</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">d3-spanish</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Timer — d3-timer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/basico/timer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="timer-d3-timer">
+<span id="d3-timer-section"></span><h1>Timer — <a class="reference external" href="https://github.com/d3/d3-timer">d3-timer</a><a class="headerlink" href="#timer-d3-timer" title="Enlazar permanentemente con este título">¶</a></h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script><div class="section" id="funciones-utiles">
+<h2>Funciones útiles<a class="headerlink" href="#funciones-utiles" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="d3-now">
+<h3><a class="reference external" href="https://github.com/d3/d3-timer/blob/master/README.md#now">d3.now()</a><a class="headerlink" href="#d3-now" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Devuelve el tiempo actual en unix timestamps. Esta función asegura consistenca temporal durante el manejo de eventos.</p>
+</div>
+</div>
+<div class="section" id="temporizadores">
+<h2>Temporizadores<a class="headerlink" href="#temporizadores" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="d3-timer">
+<h3><a class="reference external" href="https://github.com/d3/d3-timer/blob/master/README.md#timer">d3.timer()</a><a class="headerlink" href="#d3-timer" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Ejecuta un temporizador, invocando un callback específico repetidamente hasta que el temporizador es apagado. Se puede pasa un numero al parámetro opcional <code class="docutils literal notranslate"><span class="pre">delay</span></code> en milisegundos para invocar al callback después de este tiempo.</p>
+<p class="rubric">Input</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">t</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">timer</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">elapsed</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">elapsed</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">elapsed</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">)</span> <span class="p">{</span> <span class="nx">t</span><span class="p">.</span><span class="nx">stop</span><span class="p">()</span> <span class="p">};</span>
+<span class="p">},</span> <span class="mi">250</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Output</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">12</span>
+<span class="mi">72</span>
+<span class="mi">94</span>
+<span class="mi">168</span>
+<span class="mi">236</span>
+<span class="mi">252</span>
+<span class="mi">272</span>
+<span class="mi">308</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="timer-stop">
+<h3><a class="reference external" href="https://github.com/d3/d3-timer/blob/master/README.md#timer_stop">timer.stop()</a><a class="headerlink" href="#timer-stop" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Detiene un temporizador, previniendo la invocación de callbacks subsecuentes. No tiene efecto si el temporizador ya ha sido detenido.</p>
+</div>
+<div class="section" id="timer-restart">
+<h3><a class="reference external" href="https://github.com/d3/d3-timer/blob/master/README.md#timer_restart">timer.restart()</a><a class="headerlink" href="#timer-restart" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Reinicia un temporizador con un <code class="docutils literal notranslate"><span class="pre">callback</span></code> especificado y con parametros opcionales <code class="docutils literal notranslate"><span class="pre">delay</span></code> y <code class="docutils literal notranslate"><span class="pre">time</span></code>. Esta función es equivalente a para el temporizador y crear uno nuevo con los argumentos provistos, sin embargo este temporizador retiene la prioridad de la invocación anterior.</p>
+<p class="rubric">Input</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">restarted</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">callback</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">elapsed</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">elapsed</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">elapsed</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">restarted</span> <span class="o">==</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">restarted</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+            <span class="nx">t</span><span class="p">.</span><span class="nx">restart</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">t</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
+        <span class="p">};</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">timer</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">36</span>
+<span class="mi">84</span>
+<span class="mi">94</span>
+<span class="mi">118</span>
+
+<span class="mi">52</span>
+<span class="mi">58</span>
+<span class="mi">172</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="d3-timeout">
+<h3><a class="reference external" href="https://github.com/d3/d3-timer/blob/master/README.md#timeout">d3.timeout()</a><a class="headerlink" href="#d3-timeout" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Como la función <a class="reference external" href="https://github.com/d3/d3-timer/blob/master/README.md#timer">d3.timer()</a>, con la diferencia de que este temporizador se detiene en el primer callback.</p>
+<p class="rubric">Input</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">callback_2</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">elapsed</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;¡Callback ejecutado!&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">timeout</span><span class="p">(</span><span class="nx">callback_2</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</pre></div>
+</div>
+<p class="rubric">Output</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>¡Callback ejecutado!
+</pre></div>
+</div>
+</div>
+<div class="section" id="d3-interval">
+<h3><a class="reference internal" href="#d3-interval">d3.interval()</a><a class="headerlink" href="#d3-interval" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Igual que la función <a class="reference external" href="https://github.com/d3/d3-timer/blob/master/README.md#timer">d3.timer()</a> excepto en que el callback es inovocado cada <code class="docutils literal notranslate"><span class="pre">x</span></code> milisegundos definidos en el parámetro <code class="docutils literal notranslate"><span class="pre">delay</span></code>.</p>
+<p class="rubric">Input</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">callback</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">elapsed</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">elapsed</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">elapsed</span> <span class="o">&gt;</span> <span class="mi">2000</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">t</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Output</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">562</span>
+<span class="mi">1000</span>
+<span class="mi">1502</span>
+<span class="mi">2000</span>
+<span class="mi">2500</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="numeros_aleatorios.html" class="btn btn-neutral float-right" title="Números aleatorios — d3-random" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="escalas_de_colores.html" class="btn btn-neutral" title="Escalas de colores" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Álvaro Mondéjar Rubio.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

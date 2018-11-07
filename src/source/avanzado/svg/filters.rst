@@ -392,9 +392,6 @@ Ejemplo con D3
 #. Añadimos a otro elemento que queremos recortar el atributo ``clip-path`` apuntando al identificador del ``clipPath`` (en D3 ``.attr("clip-path", "url(#identificador-del-clip)"))``).
 
 
-
-
-
 .. _feOffset: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feOffset
 .. _feGaussianBlur: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feGaussianBlur
 .. _feMorphology: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feMorphology

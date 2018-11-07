@@ -37,18 +37,20 @@ El código común a todas las escalas es el siguiente:
        lenght = 20;  // Cantidad de colores en cada barra
    var unit = width/lenght;  // Ancho de cada color
 
-   var renderColorsBar = function(svg_id, interpolator) {
-       // svg_id --> Identificador del elemento svg donde
-       //              será renderizada la barra de colores.
-       // interpolator --> Interpolador d3 usado en la escala.
-
+   /**
+    * @param {string} svgId - Identificador del elemento SVG
+    *   donde será renderizada la barra de colores.
+    * @param {object} interpolator - Interpolador D3 usado
+    *   para construir la escala.
+    **/
+   var renderColorsBar = function(svgId, interpolator) {
        var colorScale = d3.scaleLinear()
            .domain([1, lenght])
            .interpolate(interpolator)
            .range([d3.rgb(color1), d3.rgb(color2)]);
 
        for (var i = 0; i < lenght; i++) {
-          d3.select(svg_id)
+          d3.select(svgId)
              .attr("height", height)
              .attr("width", width)
            .append("rect")
@@ -68,14 +70,14 @@ El código común a todas las escalas es el siguiente:
          lenght = 20;
      var unit = width/lenght;
 
-     var renderColorsBar = function(svg_id, interpolator) {
+     var renderColorsBar = function(svgId, interpolator) {
          var colorScale = d3.scaleLinear()
              .domain([1, lenght])
              .interpolate(interpolator)
              .range([d3.rgb(color1), d3.rgb(color2)]);
 
          for (var i = 0; i < lenght; i++) {
-            d3.select(svg_id)
+            d3.select(svgId)
                .attr("height", height)
                .attr("width", width)
              .append("rect")
@@ -256,6 +258,18 @@ Para entender claramente lo que hacen los interpoladores, pongamos este sencillo
 
 
    def printchart(startcolor, endcolor, steps):
+       """Imprime los colores que forman la escala
+       en formato exadecimal.
+
+       :param startcolor: Color de comienzo.
+       :type startcolor: str
+
+       :param endcolor: Color final.
+       :type endcolor: str
+
+       :param steps: Número de pasos de la escala.
+       :type steps: int
+       """
        colors = interpolate(startcolor, endcolor, steps)
 
        for color in colors:

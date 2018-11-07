@@ -38,5 +38,3 @@ Para crear un gradiente lineal definimos el filtro ``linearGradient``.
 
        <rect x="0" y="0" width="300" height="100" fill="url(#grad1)" />
     </svg>
-
-

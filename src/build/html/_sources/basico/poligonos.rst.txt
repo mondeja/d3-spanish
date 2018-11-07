@@ -30,7 +30,7 @@ El módulo `d3-polygon`_ ofrece algunas operaciones que se pueden efectuar sobre
      var area = d3.polygonArea(poligono);
      console.log(area);       // 1087.5
 
-     // Obtenemos el perímetro del poígono
+     // Obtenemos el perímetro del polígono
      var perimetro = d3.polygonLength(poligono);
      console.log(perimetro);  // 141.2173868302254
 
@@ -64,7 +64,7 @@ El módulo `d3-polygon`_ ofrece algunas operaciones que se pueden efectuar sobre
      var area = d3.polygonArea(poligono);
      console.log(area);       // 1087.5
 
-     // Obtenemos el perímetro del poígono
+     // Obtenemos el perímetro del polígono
      var perimetro = d3.polygonLength(poligono);
      console.log(perimetro);  // 141.2173868302254
 

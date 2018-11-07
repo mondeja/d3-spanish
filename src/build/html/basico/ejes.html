@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -24,27 +24,19 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Índice"
-              href="../genindex.html"/>
-        <link rel="search" title="Búsqueda" href="../search.html"/>
-    <link rel="top" title="documentación de d3-spanish - 0.0.1" href="../index.html"/>
-        <link rel="next" title="Escalas de colores" href="escalas_de_colores.html"/>
-        <link rel="prev" title="Escalas — d3-scale" href="escalas.html"/> 
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Escalas de colores" href="escalas_de_colores.html" />
+    <link rel="prev" title="Escalas — d3-scale" href="escalas.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -103,6 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="mapas.html">Mapas — d3-geo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="layouts.html">Layouts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="animaciones.html">Animaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poligonos.html">Polígonos — d3-polygon</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Ejemplos</span></p>
 <ul>
@@ -128,7 +121,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">d3-spanish</a>
@@ -136,9 +129,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -185,14 +179,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script><p>El componente de D3 <code class="docutils literal notranslate"><span class="pre">axis</span></code> renderiza marcas de referencia para escalas (ver <a class="reference internal" href="escalas.html#d3-scale-section"><span class="std std-ref">Escalas — d3-scale</span></a>).</p>
 <div class="section" id="funciones">
 <h2>Funciones<a class="headerlink" href="#funciones" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>D3 provee 4 métodos, con sus nombres indicando su alineamiento, para crear un generador de eje: <a class="reference external" href="https://github.com/d3/d3-axis#axisTop">d3.axisTop([scale])</a>, <a class="reference external" href="https://github.com/d3/d3-axis#axisRight">d3.axisRight([scale])</a>, <a class="reference external" href="https://github.com/d3/d3-axis#axisBottom">d3.axisBottom([scale])</a> and <a class="reference external" href="https://github.com/d3/d3-axis#axisLeft">d3.axisLeft([scale])</a>. Un eje alineado arriba (<code class="docutils literal notranslate"><span class="pre">axisTop</span></code>) tiene los ticks dibujados debajo del eje. Un eje alineado abajo (<code class="docutils literal notranslate"><span class="pre">axisBottom</span></code>) es horizontal y tiene sus ticks dibujados debajo del eje. Un eje alineado a la izquierda (<code class="docutils literal notranslate"><span class="pre">axisLeft</span></code>) es vertical y tiene sus ticks alineados a la izquierda del eje, y el eje alineado a la derecha (<code class="docutils literal notranslate"><span class="pre">axisRight</span></code>) viceversa.</p>
+<p>D3 provee 4 métodos, con sus nombres indicando su alineamiento, para crear un generador de eje: <a class="reference external" href="https://github.com/d3/d3-axis#axisTop">d3.axisTop([scale])</a>, <a class="reference external" href="https://github.com/d3/d3-axis#axisRight">d3.axisRight([scale])</a>, <a class="reference external" href="https://github.com/d3/d3-axis#axisBottom">d3.axisBottom([scale])</a> and <a class="reference external" href="https://github.com/d3/d3-axis#axisLeft">d3.axisLeft([scale])</a>. Un eje alineado arriba (<code class="docutils literal notranslate"><span class="pre">axisTop</span></code>) tiene los ticks dibujados debajo del eje. Un eje alineado abajo (<code class="docutils literal notranslate"><span class="pre">axisBottom</span></code>) es horizontal y tiene sus ticks dibujados debajo del eje. Un eje alineado a la izquierda (<code class="docutils literal notranslate"><span class="pre">axisLeft</span></code>) es vertical y tiene sus ticks alineados a la izquierda del eje, y el eje alineado a la derecha (<code class="docutils literal notranslate"><span class="pre">axisRight</span></code>) en el lado opuesto con los ejes dibujados en el lado exterior.</p>
 <p>Todas admiten una escala como primer parámetro, pero esta también puede ser añadida mediante la función <a class="reference external" href="https://github.com/d3/d3-axis#axis_scale">axis.scale([scale])</a>.</p>
 <p>Para añadir el eje a una selección usamos la función <a class="reference external" href="https://github.com/d3/d3-selection#selection_call">selection.call([axis])</a>.</p>
 </div>
 <div class="section" id="paso-a-paso">
 <h2>Paso a paso<a class="headerlink" href="#paso-a-paso" title="Enlazar permanentemente con este título">¶</a></h2>
 <p class="rubric">Input</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Creamos una figura svg con dimensiones --&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Creamos una figura SVG con dimensiones --&gt;</span>
 <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;40&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">g</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;eje&quot;</span><span class="p">&gt;</span>  <span class="c">&lt;!-- Dentro ubicamos un grupo --&gt;</span>
 <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
@@ -340,9 +334,7 @@
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -364,7 +356,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -383,6 +375,7 @@
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
             VERSION:'0.0.1',
+            LANGUAGE:'es',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -397,19 +390,13 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

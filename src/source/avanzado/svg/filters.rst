@@ -7,7 +7,7 @@ Filtros SVG
 Básico
 ======
 
-Para crear un filtro con SVG debemos crear un elemento ``defs`` donde definimos todos los filstros que más tarde podemos aplicar a los elementos referenciándolos. Dentro de estas etiquetas, creamos filtros con la etiqueta ``filter`` a la cual es importante otorgar un identificador para luego poder referenciarlos.
+Para crear un filtro con SVG debemos crear un elemento ``defs`` donde definimos todos los filtros que más tarde podemos aplicar a los elementos referenciándolos. Dentro de estas etiquetas, creamos filtros con la etiqueta ``filter`` a la cual es importante otorgar un identificador para luego poder referenciarlos.
 
 .. raw:: html
 

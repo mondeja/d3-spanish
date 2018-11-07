@@ -8,6 +8,10 @@ SPHINXPROJ    = d3-spanish
 SOURCEDIR     = source
 BUILDDIR      = build
 
+html-show:
+	make html
+	make show
+
 show:
 	see build/html/index.html &
 

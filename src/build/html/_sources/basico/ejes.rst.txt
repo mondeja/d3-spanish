@@ -13,7 +13,7 @@ El componente de D3 ``axis`` renderiza marcas de referencia para escalas (ver :r
 
 Funciones
 =========
-D3 provee 4 métodos, con sus nombres indicando su alineamiento, para crear un generador de eje: `d3.axisTop([scale])`_, `d3.axisRight([scale])`_, `d3.axisBottom([scale])`_ and `d3.axisLeft([scale])`_. Un eje alineado arriba (``axisTop``) tiene los ticks dibujados debajo del eje. Un eje alineado abajo (``axisBottom``) es horizontal y tiene sus ticks dibujados debajo del eje. Un eje alineado a la izquierda (``axisLeft``) es vertical y tiene sus ticks alineados a la izquierda del eje, y el eje alineado a la derecha (``axisRight``) viceversa.
+D3 provee 4 métodos, con sus nombres indicando su alineamiento, para crear un generador de eje: `d3.axisTop([scale])`_, `d3.axisRight([scale])`_, `d3.axisBottom([scale])`_ and `d3.axisLeft([scale])`_. Un eje alineado arriba (``axisTop``) tiene los ticks dibujados debajo del eje. Un eje alineado abajo (``axisBottom``) es horizontal y tiene sus ticks dibujados debajo del eje. Un eje alineado a la izquierda (``axisLeft``) es vertical y tiene sus ticks alineados a la izquierda del eje, y el eje alineado a la derecha (``axisRight``) en el lado opuesto con los ejes dibujados en el lado exterior.
 
 
 Todas admiten una escala como primer parámetro, pero esta también puede ser añadida mediante la función `axis.scale([scale])`_.
@@ -28,7 +28,7 @@ Paso a paso
 
 .. code-block:: html
 
-   <!-- Creamos una figura svg con dimensiones -->
+   <!-- Creamos una figura SVG con dimensiones -->
    <svg width="100%" height="40">
      <g class="eje">  <!-- Dentro ubicamos un grupo -->
    </svg>

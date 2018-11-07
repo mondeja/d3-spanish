@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -24,28 +24,19 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Índice"
-              href="../../genindex.html"/>
-        <link rel="search" title="Búsqueda" href="../../search.html"/>
-    <link rel="top" title="documentación de d3-spanish - 0.0.1" href="../../index.html"/>
-        <link rel="up" title="SVG" href="index.html"/>
-        <link rel="next" title="Gradientes SVG" href="gradients.html"/>
-        <link rel="prev" title="SVG" href="index.html"/> 
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Gradientes SVG" href="gradients.html" />
+    <link rel="prev" title="SVG" href="index.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -98,6 +89,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../basico/mapas.html">Mapas — d3-geo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basico/layouts.html">Layouts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basico/animaciones.html">Animaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basico/poligonos.html">Polígonos — d3-polygon</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Ejemplos</span></p>
 <ul>
@@ -146,7 +138,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">d3-spanish</a>
@@ -154,9 +146,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -204,7 +197,7 @@
 <h1>Filtros SVG<a class="headerlink" href="#filtros-svg" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="section" id="basico">
 <h2>Básico<a class="headerlink" href="#basico" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Para crear un filtro con SVG debemos crear un elemento <code class="docutils literal notranslate"><span class="pre">defs</span></code> donde definimos todos los filstros que más tarde podemos aplicar a los elementos referenciándolos. Dentro de estas etiquetas, creamos filtros con la etiqueta <code class="docutils literal notranslate"><span class="pre">filter</span></code> a la cual es importante otorgar un identificador para luego poder referenciarlos.</p>
+<p>Para crear un filtro con SVG debemos crear un elemento <code class="docutils literal notranslate"><span class="pre">defs</span></code> donde definimos todos los filtros que más tarde podemos aplicar a los elementos referenciándolos. Dentro de estas etiquetas, creamos filtros con la etiqueta <code class="docutils literal notranslate"><span class="pre">filter</span></code> a la cual es importante otorgar un identificador para luego poder referenciarlos.</p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script><p>El siguiente código es común a todos los ejemplos:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">margin</span> <span class="o">=</span> <span class="p">{</span><span class="nx">top</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span> <span class="nx">right</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nx">bottom</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nx">left</span><span class="o">:</span> <span class="mi">20</span><span class="p">},</span>
     <span class="nx">width</span> <span class="o">=</span> <span class="mi">680</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">left</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">right</span><span class="p">,</span>
@@ -537,9 +530,7 @@
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -561,7 +552,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -580,6 +571,7 @@
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'0.0.1',
+            LANGUAGE:'es',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -594,19 +586,13 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

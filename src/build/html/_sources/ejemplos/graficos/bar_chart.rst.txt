@@ -283,6 +283,8 @@ Gráfico de barras con datos reales
    <style>
      #chart-3 rect {
        fill: teal;
+       position: absolute:
+       right: 200px;
      }
 
      #chart-3 text {

@@ -21,7 +21,7 @@ Todas admiten una escala como primer parámetro, pero esta también puede ser a�
 Para añadir el eje a una selección usamos la función `selection.call([axis])`_.
 
 Paso a paso
-===========
+-----------
 
 
 .. rubric:: Input

@@ -27,7 +27,7 @@ El cambio más drástico ha sido `el paso de la versión 3 a la 4`_.
 Estructura del código
 ---------------------
 
-A partir de la versión 4, `D3JS`_ se ha vuelto una biblioteca modular, es decir, cada módulo se encuentra en un repositorio separado, por lo cual pueden importarse los módulos necesarios para empaquetarlos en un bundle sin depender del resto del codigo no usado de la biblioteca.
+A partir de la versión 4, `D3JS`_ se ha vuelto una biblioteca modular, es decir, cada módulo se encuentra en un repositorio separado, por lo cual pueden importarse los módulos necesarios para empaquetarlos en un bundle sin depender del resto del código no usado de la biblioteca.
 
 Por lo tanto si encuentras ejemplos en la web, mira siempre la versión en la que esté diseñado, puesto que si es la versión 3 y estás utilizando la 4, (depende de tu conocimiento de la biblioteca y la complejidad del ejemplo) te puede ser difícil de trascribir y es probable que salten errores.
 
@@ -50,7 +50,6 @@ He escrito este libro con el propósito de investigar estos conceptos a fondo y 
 
 - Atentamente: `Álvaro Mondéjar Rubio`_
 
-.. _d3js: https://github.com/d3/d3
 .. _instalación: https://github.com/d3/d3#installing
 .. _Mike Bostock: https://github.com/mbostock
 .. _publicados: https://bost.ocks.org/mike/

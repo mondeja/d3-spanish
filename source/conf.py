@@ -112,6 +112,12 @@ html_static_path = ['_static']
 #
 # html_sidebars = {}
 
+# Global links and substitutions
+rst_epilog = """
+.. _d3js: https://github.com/d3/d3/
+"""
+
+
 
 # -- Options for HTMLHelp output ---------------------------------------------
 

@@ -9,7 +9,7 @@ Selecciones --- `d3-selection`_
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
 
 
-El módulo `d3-selection`_ está incluido en la distribución estándar de D3JS y proporciona funciones para seleccionar elementos del DOM.
+El módulo `d3-selection`_ está incluido en la distribución estándar de `D3JS`_ y proporciona funciones para seleccionar elementos del DOM.
 
 Funciones
 =========

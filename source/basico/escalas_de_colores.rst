@@ -5,6 +5,7 @@ Escalas de colores
 .. raw:: html
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+   <script>console.log("D3JS v" + d3.version)</script>
 
 .. raw:: html
 
@@ -38,6 +39,9 @@ El código común a todas las escalas es el siguiente:
    var unit = width/lenght;  // Ancho de cada color
 
    /**
+    * Renderiza una barra de colores en un contenedor SVG
+    *   usando un interpolador de D3.
+    *
     * @param {string} svgId - Identificador del elemento SVG
     *   donde será renderizada la barra de colores.
     * @param {object} interpolator - Interpolador D3 usado

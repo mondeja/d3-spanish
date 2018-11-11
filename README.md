@@ -8,4 +8,5 @@ Puedes verlo en [d3-spanish.readthedocs.io](https://d3-spanish.readthedocs.io).
 
 - Compilación: ``make html``
 - Abrir el navegador para verlo: ``make show``
+- Compilar automáticamente cuando se detectan cambios: ``make watch``
 - Limpieza del repositorio: ``make clean``

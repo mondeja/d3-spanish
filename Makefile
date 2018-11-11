@@ -8,6 +8,8 @@ SPHINXPROJ    = d3-spanish
 SOURCEDIR     = source
 BUILDDIR      = build
 
+python        = python3
+
 html-show:
 	make html
 	make show
@@ -15,6 +17,10 @@ html-show:
 show:
 	if [ ! -d "build/html/" ]; then make html; fi
 	see build/html/index.html &
+
+watch:
+	if ! python -c 'import pkgutil; exit(not pkgutil.find_loader("watchgod"))'; then printf ""; else sudo $(python) -m pip install watchgod; fi
+	$(python) watch.py
 
 # Put it first so that "make" without argument is like "make help".
 help:

@@ -12,7 +12,6 @@ Libro de cocina de D3js en español
    :caption: Conceptos básicos
 
    basico/introduccion
-   basico/selecciones
    basico/escalas
    basico/ejes
    basico/escalas_de_colores

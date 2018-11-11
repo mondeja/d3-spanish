@@ -5,6 +5,7 @@ Polígonos --- `d3-polygon`_
 .. raw:: html
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+   <script>console.log("D3JS v" + d3.version)</script>
 
 El módulo `d3-polygon`_ ofrece algunas operaciones que se pueden efectuar sobre polígonos de dos dimensiones. Cada polígono está representado por un array de arrays de dos elementos y pueden ser cerrados (si el primer y el último punto son el mismo) o abiertos. Típicamente, el orden de los puntos están dados en dirección a las agujas del reloj donde el origen ``(0, 0)`` se sitúa en la esquina izquierda-arriba de la pantalla.
 

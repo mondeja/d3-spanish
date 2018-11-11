@@ -7,6 +7,7 @@ Escalas --- `d3-scale`_
 .. raw:: html
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+   <script>console.log("D3JS v" + d3.version)</script>
 
 Las escalas son abstracciones que nos permiten representar una dimensión de datos abstractos en una representación visual. Pueden representar cualquier codificación visual, tales como divergencia de colores, anchos de trazo o tamaños de símbolos. Dependendiendo del tipo de datos que queramos representar debemos elegir un tipo de escala adecuado.
 
@@ -46,6 +47,11 @@ Las escalas no sólo representan datos matemáticos, si no cualquier rango de ma
        .domain([0, 100])
        .range(["brown", "steelblue"])
    console.log(color(30));  // rgb(137, 68, 83)
+
+
+.. seealso::
+
+   - `Tipos de funciones (Jupyter Notebook) <https://github.com/mondeja/fullstack/blob/master/backend/src/001-matematicas/analisis/funciones/tipos.ipynb>`__
 
 
 Interpoladores
@@ -184,7 +190,6 @@ Este tipo de escalas son similares a las escalas :ref:`escalas-continuas` en que
      var secuencial = d3.scaleSequential( function(t) { return t; })
          .domain([1, 100]);
      console.log(secuencial(2));
-     //console.log(secuencial(2));
      //console.log(secuencial.ticks(5));
    </script>
 

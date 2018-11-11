@@ -7,6 +7,8 @@ Mapas --- `d3-geo`_
 .. raw:: html
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+   <script>console.log("D3JS v" + d3.version)</script>
+
 
 Para generar mapas en D3 seguimos los siguientes pasos:
 

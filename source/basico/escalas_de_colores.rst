@@ -9,7 +9,7 @@ Escalas de colores
 
 .. raw:: html
 
-   <p>En los siguientes ejemplos vamos a coger una escala que empieza y termina en los colores mostrados abajo (<span id="color1-span"></span>, <span id="color2-span"></span>). Vamos a mapearla como una escala en D3 y aplicaremos diferentes interpolaciones.</p>
+   <p>En los siguientes ejemplos vamos a coger una escala que empieza y termina en los colores mostrados abajo (<span id="color1-span"></span>, <span id="color2-span"></span>). Vamos a mapearla como una escala lineal en D3 y aplicaremos diferentes interpolaciones de color.</p>
 
 .. raw:: html
 
@@ -34,7 +34,7 @@ El código común a todas las escalas es el siguiente:
 .. code-block:: js
 
    var width = 700,
-       height = 500,
+       height = 175,
        lenght = 20;  // Cantidad de colores en cada barra
    var unit = width/lenght;  // Ancho de cada color
 

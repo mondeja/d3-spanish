@@ -79,8 +79,8 @@ Trabajando con datos
 
 `D3JS`_ es una biblioteca enfocada a representar datos de forma gráfica. Para ello, cuenta con funciones que están especializadas en enlazar datos y elementos, para ir actualizándolos sincronizados.
 
-Enlazado de datos a elementos - `selection.data`_
--------------------------------------------------
+Enlazando datos y elementos - `selection.data`_
+-----------------------------------------------
 
 Jugando con las selecciones podemos hacer lo siguiente:
 

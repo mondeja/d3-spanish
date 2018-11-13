@@ -107,7 +107,7 @@ La función `escala_continua.ticks([count]) <https://github.com/d3/d3-scale#cont
        .range([3000, 5000])
    x.ticks(5);     // Array [ 0, 20, 40, 60, 80, 100 ]
 
-Los valores devueltos están uniformemente espaciados, tienen valores legibles por humanos (como múltiplos de potencias de 10) y se garantiza que estarán dentro de la extensión del dominio. Los ticks son usados a menudo para mostrar líneas de referencia o marcas, en cojunción con los datos visualizados.
+Los valores devueltos están uniformemente espaciados, tienen valores legibles por humanos (como múltiplos de potencias de 10) y se garantiza que estarán dentro de la extensión del dominio. Los ticks son usados a menudo para mostrar líneas de referencia o marcas, en conjunción con los datos visualizados.
 
 
 Escalas lineales - `d3.scaleLinear()`_
@@ -183,14 +183,17 @@ Este tipo de escalas son similares a las escalas :ref:`escalas-continuas` en que
 
 .. code-block:: js
 
+   var interpolator = function(t){ return t*2 };
+   var secuencial = d3.scaleSequential(interpolator)
+         .domain([1, 100]);
+   console.log(secuencial(99)); // 1.97979797979798
 
 .. raw:: html
 
    <script>
-     var secuencial = d3.scaleSequential( function(t) { return t; })
+     var interpolator = function(t){ return t*2 };
+     var secuencial = d3.scaleSequential(interpolator)
          .domain([1, 100]);
-     console.log(secuencial(2));
-     //console.log(secuencial.ticks(5));
    </script>
 
 

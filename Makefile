@@ -19,6 +19,7 @@ show:
 	see build/html/index.html &
 
 watch:
+	make html
 	if ! python -c 'import pkgutil; exit(not pkgutil.find_loader("watchgod"))'; then printf ""; else sudo $(python) -m pip install watchgod; fi
 	$(python) watch.py
 

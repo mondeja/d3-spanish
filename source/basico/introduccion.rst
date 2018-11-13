@@ -55,16 +55,21 @@ Comprende desde cosas muy básicas como selecciones estilo jQuery a diseños pre
 
 .. raw:: html
 
-   <span id="sign-name">
-      <a href="https://www.github.com/mondeja">Álvaro Mondéjar Rubio</a>
-   </span>
+   <div id="sign-name-container">
+       <a id="sign-name" href="https://www.github.com/mondeja" target="__blank">Álvaro Mondéjar Rubio</a>
+   </div>
    <style>
-       #sign-name {
-         font-size: 1.6em;
+       #sign-name-container {
          text-align: center;
-         margin-bottom: 50px;
+         margin-top: 5px;
+         margin-bottom: 15px;
        }
-       #sign-name:hover {
+       #sign-name {
+         font-size: 1.55em;
+         text-align: center;
+         text-decoration: none;
+       }
+       #sign-name::hover {
          color: steal;
        }
    </style>

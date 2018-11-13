@@ -9,12 +9,11 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 SOURCE_DIR_NAME = "source"
 SOURCE_DIR = os.path.join(BASE_DIR, SOURCE_DIR_NAME)
 
-RUNNING = False
-
 print("Watching for changes on '%s%s' directory..." % (
     SOURCE_DIR_NAME, os.sep))
 
 def main():
+    RUNNING = False
     for changes in watch(SOURCE_DIR):
         if not RUNNING:
             RUNNING = True

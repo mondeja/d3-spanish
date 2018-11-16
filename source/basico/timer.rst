@@ -7,7 +7,7 @@ Timer --- `d3-timer`_
 .. raw:: html
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
-   <script>console.log("D3JS v" + d3.version)</script>
+   <script>console.log("D3JS v" + d3.version);</script>
 
 Funciones útiles
 ================

@@ -248,31 +248,36 @@ Para comprobar lo que hace esta extraña función podemos hacer:
 
 Mira que interesante. Tenemos un objeto muy parecido a una selección. Las propiedades ``_groups`` y ``_parents`` siguen siendo los grupos de objetos y los padres (en este caso el elemento SVG raíz), que los vimos al principio de este capítulo. Pero ahora han aparecido dos propiedades más: ``_enter`` y ``_exit``:
 
-- ``_enter``: Es la propiedad donde se almacena la selección de los datos que han entrado a la selección. Si la inspeccionamos encontraremos algo como: 
+- ``_enter``: Es la propiedad donde se almacena la selección de los datos que han entrado a la selección. Para obtener los elementos de esta selección usamos la función `selection.enter`_.
+- ``_exit``: Es la propiedad donde se almacena la selección de los datos que existen en los elementos del DOM seleccionados pero ya no existen entre los datos que han entrado a la selección, es decir, correponde a los datos que salen. Para obtener los elementos de esta selección usamos la función `selection.exit`_.
 
-  .. code-block:: javascript
-
-   _enter: Array(1)
-     0: Array(7)
-       0: ot
-         namespaceURI: "http://www.w3.org/2000/svg"
-         ownerDocument: document
-         __data__: {day: "Monday", days_until_next_weekend: 5}
-         _next: null
-         _parent: svg#data2
-         __proto__: Object
-     1: ot {ownerDocument: document, namespaceURI: "http://www.w3.org/2000/svg", _next: null, _parent: svg#data2, __data__: {…}}
-     2: ot {ownerDocument: document, namespaceURI: "http://www.w3.org/2000/svg", _next: null, _parent: svg#data2, __data__: {…}}
-     ...
-
-
-
-Con la función `selection.data`_, podemos enlazar esos datos a cualquier elemento HTML que queramos.
 
 Patrón de actualización
 -----------------------
 
+Como dijimos al principio, `D3JS`_ no sólo es capaz de enlazar datos a elementos y representarlos, si no que es capaz de actualizarlos en tiempo real. Para ello, es fundamental conocer el patrón de actualización y como implementarlo en `D3JS`_.
 
+.. seealso::
+
+   - `General Update Pattern, I <https://bl.ocks.org/mbostock/3808218>`__
+   - `General Update Pattern, III <https://bl.ocks.org/mbostock/3808234>`__
+
+Este sigue los siguientes pasos:
+
+1. Antes de la ejecución del código, no existen elementos en el DOM.
+2. Cuando se ejecuta por primera vez una selección vacía con `selectAll`_ y le enlazamos datos con `selection.data`_, la selección sigue estando vacía, pero se añaden las propiedades ``_enter`` y ``_exit`` y estas esperan a que entren o salgan datos.
+3. Cuando se ejecuta la función `selection.enter`_, seleccionamos todos los datos que entraron con `selection.data`_ preparados para ser manipulados. En este paso es muy común añadir los elementos correspondientes a los datos al DOM con `selection.append`_  o `selection.insert`_.
+4. Como estamos en un patrón de actualización, tenemos que ejecutar un timer (ver :ref:`d3-timer-section`), es decir, tenemos que hacer que se establezca algún tipo de bucle para que se pueda actualizar el contenido de la presentación.
+5. A partir de la segunda vez que aplicamos la función `selection.data`_ sobre un elemento ocurre lo siguiente:
+
+   - La selección ``exit`` almacenará los elementos cuyos datos definimos la primera vez pero ahora no se encuentran entre los nuevos datos. Es muy común aplicar sobre ellos la función `selection.remove`_ para eliminarlos.
+   - La selección ``enter`` alamacenará los elementos cuyos datos han entrado nuevos, los cuales no existían antes en el DOM.
 
 .. _d3-selection: https://github.com/d3/d3-selection
+.. _selectAll: https://github.com/d3/d3-selection#selectAll
 .. _selection.data: https://github.com/d3/d3-selection/blob/master/README.md#selection_data
+.. _selection.enter: https://github.com/d3/d3-selection#selection_enter
+.. _selection.exit: https://github.com/d3/d3-selection#selection_exit
+.. _selection.append: https://github.com/d3/d3-selection#selection_append
+.. _selection.insert: https://github.com/d3/d3-selection#selection_insert
+.. _selection.remove: https://github.com/d3/d3-selection#selection_remove

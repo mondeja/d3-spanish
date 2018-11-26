@@ -82,7 +82,7 @@ Se trata de generar una imagen circular con los bordes difuminados a partir de u
 Aplicar textura a una imagen
 ----------------------------
 
-Coniste en superponer dos o más imágenes del mismo tamaño, disminuyendo la opacidad de la imagen de textura.  Pulsa `aquí <file:///home/mondeja/Escritorio/pydocs/my_libraries/d3-spanish/src/source/proyectos/textured_image/index.html>`__ para ver el ejemplo de abajo renderizado.
+Coniste en superponer dos o más imágenes del mismo tamaño, disminuyendo la opacidad de la imagen de textura. 
 
 .. rubric:: Mezcla de imagen y textura
 
